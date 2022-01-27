@@ -1,0 +1,40 @@
+
+@import './variables.scss';
+
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+input{
+    font-family: 'Open Sans', sans-serif; 
+}
+
+
+.container{
+    
+    /*Mobile layout*/
+    max-width: 1200px;
+    padding:0 $top-spacer;
+    //border:1px solid red;
+}
+
+.main_header{
+    margin:$top-spacer 0 16px 0;
+}
+
+.main_heading{
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.divider{
+   
+    height:2px;
+    background:#A9A8A9;
+    margin:$top-spacer 0;
+}
