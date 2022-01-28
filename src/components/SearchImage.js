@@ -6,10 +6,17 @@ const SearchImage = ({GetInputSearch}) => {
 
     const [inputSearch,setInputSearch] = useState("");
   
+
+    const resetInput = () =>{
+       setInputSearch("");
+    }
     const handleSubmit = (e) =>{
       e.preventDefault();
-      GetInputSearch(inputSearch);
+      GetInputSearch(inputSearch)
+      resetInput();
     }
+
+
 
     return(
        <div className='container'>
