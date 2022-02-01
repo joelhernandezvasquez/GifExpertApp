@@ -1,0 +1,53 @@
+
+@import './variables.scss';
+
+.category_container{
+  
+  margin-bottom:$top-spacer;
+    .container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,320px));
+    gap:20px;
+    
+    // @media(min-width:$tableScreen){
+    //   justify-content: center;   
+    // }
+    }
+}
+
+.category_title{
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  text-transform: capitalize;
+  padding:12px $top-spacer;
+
+  @media(min-width:$tableScreen)
+  {
+      padding:12px 32px;
+     
+  }
+  @media(min-width:$desktopScreen)
+  {
+      padding:12px 56px;
+     
+  }
+}
+
+.card_image{
+ 
+  border:1px solid #A9A8A9;
+  border-radius:5px;
+  max-height:370px;
+ 
+  img{
+      width: 100%;
+      max-height:300px;
+      object-fit:cover;
+      
+  }
+
+  .title{
+    text-align:center;
+    font-size:1.2rem;
+    padding:$top-spacer 0;
+  }
+}

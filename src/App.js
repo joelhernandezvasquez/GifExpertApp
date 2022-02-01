@@ -3,13 +3,13 @@ import {useState,useEffect} from 'react';
 import SearchImage from './components/SearchImage';
 import Divider from './components/Divider';
 import {fetchImages} from './API/index';
+import AddCategory from './components/AddCategory';
 import './styles/main.scss';
 
 function App() {
   
   const [searchText,setSearchText] = useState("");
-   const[ListImages,setListImages] = useState([])
-
+   const[listImages,setListImages] = useState([])
   
   const getInputSearch = (inputSearch)=>{
     setSearchText(inputSearch);
@@ -21,7 +21,7 @@ function App() {
       const imageResult = await fetchImages(searchText);
       
       if(imageResult.success){
-        setListImages([...ListImages,imageResult.data]);
+        setListImages([imageResult.responseData,...listImages]);
       }
       else{
         console.log(imageResult.data)
@@ -35,20 +35,25 @@ function App() {
   },[searchText])
 
   return (
-    <div className="App">
-      
+    <>
+     
       <header className="main_header container">
         <h1 className='main_heading'>GifExpertApp</h1>
       </header>
 
       <SearchImage GetInputSearch = {getInputSearch}/>
       <Divider/>
-      
-      {/* {ListImages.map((list)=>{
        
-      })} */}
+        {/* {[...listImages].reverse().map((categoryList,index)=>{
+         return <AddCategory key={index} categoryTitle = {categoryList.titleCategory} categoryItems = {categoryList.data} />
+      })} 
+         */}
+          {listImages.map((categoryList,index)=>{
+         return <AddCategory key={index} categoryTitle = {categoryList.titleCategory} categoryItems = {categoryList.data} />
+      })} 
+        
       
-    </div>
+    </>
   );
 }
 

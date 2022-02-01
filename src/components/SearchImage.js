@@ -1,5 +1,6 @@
 
 import React,{useState} from 'react';
+import PropTypes from 'prop-types';
 import '../styles/search_image.scss';
 
 const SearchImage = ({GetInputSearch}) => {
@@ -31,5 +32,8 @@ const SearchImage = ({GetInputSearch}) => {
        
        )
 };
+SearchImage.propTypes = {
+   GetInputSearch:PropTypes.func.isRequired
+}
 
 export default SearchImage;

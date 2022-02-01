@@ -21,6 +21,20 @@ input{
     max-width: 1200px;
     padding:0 $top-spacer;
     //border:1px solid red;
+
+    // Table layout
+    @media(min-width:$tableScreen)
+    {
+        padding:0 32px;
+       
+    }
+    @media(min-width:$desktopScreen)
+    {
+        padding:0 56px;
+        max-width: 1600px;
+       
+    }
+   
 }
 
 .main_header{
