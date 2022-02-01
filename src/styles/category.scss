@@ -4,14 +4,12 @@
 .category_container{
   
   margin-bottom:$top-spacer;
-    .container{
+    
+  .container{
     display:grid;
     grid-template-columns: repeat(auto-fit,minmax(300px,320px));
     gap:20px;
     
-    // @media(min-width:$tableScreen){
-    //   justify-content: center;   
-    // }
     }
 }
 
@@ -37,6 +35,7 @@
   border:1px solid #A9A8A9;
   border-radius:5px;
   max-height:370px;
+  overflow:hidden;
  
   img{
       width: 100%;
